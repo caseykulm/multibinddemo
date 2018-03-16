@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 import dagger.Component;
 
-@Component(modules = {StuffModule.class, UtilModule.class})
+@Component(modules = StuffModule.class)
 public interface MainComponent {
     void inject(App app);
 }

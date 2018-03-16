@@ -27,4 +27,9 @@ abstract class StuffModule {
     static String provideRebeccaAltName() {
         return "Becca";
     }
+
+    @Provides
+    static AltNamesMapUtil provideAltNameMapUtil(@Named(ALT_NAMES) Map<String, String> altNames) {
+        return new AltNamesMapUtil(altNames);
+    }
 }
