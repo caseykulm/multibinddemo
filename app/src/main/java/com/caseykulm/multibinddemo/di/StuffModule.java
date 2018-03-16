@@ -14,7 +14,7 @@ import dagger.multibindings.StringKey;
 
 @Module
 abstract class StuffModule {
-    public static final String ALT_NAMES = "alt_names";
+    private static final String ALT_NAMES = "alt_names";
 
     @Multibinds @Named(ALT_NAMES) abstract Map<String, String> provideAltNameMap();
 
@@ -29,7 +29,7 @@ abstract class StuffModule {
     }
 
     @Provides
-    static AltNamesMapUtil provideAltNameMapUtil(@Named(ALT_NAMES) Map<String, String> altNames) {
+    static AltNamesMapUtil provideAltNamesMapUtil(@Named(ALT_NAMES)  Map<String, String> altNames) {
         return new AltNamesMapUtil(altNames);
     }
 }
